@@ -29,18 +29,18 @@ check_variable_set(PIP_PLATFORM linux_x86_64)
 check_variable_set(DS_PATH "/opt/nvidia/deepstream/deepstream-${DS_VERSION}")
 
 
-# Checking values are allowed
-macro(check_variable_allowed var_name var_list)
-        if(NOT ${var_name} IN_LIST ${var_list})
-                message(FATAL_ERROR "${var_name} must be one of ${${var_list}}")
-        endif()
-endmacro()
-set(PYTHON_MAJVERS_ALLOWED 3)
-check_variable_allowed(PYTHON_MAJOR_VERSION PYTHON_MAJVERS_ALLOWED)
-set(PYTHON_MINVERS_ALLOWED 6 8)
-check_variable_allowed(PYTHON_MINOR_VERSION PYTHON_MINVERS_ALLOWED)
-set(PIP_PLATFORM_ALLOWED linux_x86_64 linux_aarch64)
-check_variable_allowed(PIP_PLATFORM PIP_PLATFORM_ALLOWED)
+# # Checking values are allowed
+# macro(check_variable_allowed var_name var_list)
+#         if(NOT ${var_name} IN_LIST ${var_list})
+#                 message(FATAL_ERROR "${var_name} must be one of ${${var_list}}")
+#         endif()
+# endmacro()
+# set(PYTHON_MAJVERS_ALLOWED 3)
+# check_variable_allowed(PYTHON_MAJOR_VERSION PYTHON_MAJVERS_ALLOWED)
+# set(PYTHON_MINVERS_ALLOWED 6 8)
+# check_variable_allowed(PYTHON_MINOR_VERSION PYTHON_MINVERS_ALLOWED)
+# set(PIP_PLATFORM_ALLOWED linux_x86_64 linux_aarch64)
+# check_variable_allowed(PIP_PLATFORM PIP_PLATFORM_ALLOWED)
 
 # Setting C++ values
 set(CMAKE_CXX_STANDARD 17)
